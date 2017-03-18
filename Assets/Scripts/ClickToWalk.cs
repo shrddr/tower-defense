@@ -3,13 +3,11 @@ using UnityEngine.AI;
 
 public class ClickToWalk : MonoBehaviour
 {
-    public Vector3 ShowDestination;
     private NavMeshAgent _navMeshAgent;
 
 	void Start()
 	{
 	    _navMeshAgent = GetComponent<NavMeshAgent>();
-	    _navMeshAgent.destination = transform.position;
 	}
 	
 	void Update()
@@ -23,6 +21,18 @@ public class ClickToWalk : MonoBehaviour
 	        {
 	            _navMeshAgent.SetDestination(hit.point);
 	        }
-	    }    
-	}
+	    }
+
+        if (Input.GetMouseButton(1))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.CompareTag("Enemy"))
+            {
+                var enemyController = hit.collider.gameObject.GetComponent<EnemyController>();
+                enemyController.TakeDamage(1);
+            }
+        }
+    }
 }
