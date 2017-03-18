@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
         if (_dead) return;
         _hp -= amount;
         _healthBar.fillAmount = _hp / MaxHP;
-        if (_hp < 0) Die();
+        if (_hp <= 0) Die();
     }
 
     private void Die()

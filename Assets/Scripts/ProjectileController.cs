@@ -4,7 +4,7 @@ public class ProjectileController : MonoBehaviour
 {
     public GameObject Target;
     public float Speed = 10;
-    public float Damage = 1;
+    public float Damage = 5;
 
     // Use this for initialization
     private void Start ()
@@ -21,13 +21,14 @@ public class ProjectileController : MonoBehaviour
 	        MoveToTarget();
 	}
 
-    private void OnTriggerEnter(Collider other)
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Debug.LogWarning("Enemy!");
+            other.gameObject.SendMessage("TakeDamage", Damage);
             Destroy(gameObject);
-            var enemyController = other.gameObject.GetComponent<EnemyController>();
-            enemyController.TakeDamage(Damage);
         }
     }
 

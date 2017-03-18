@@ -285,7 +285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8854c6c86cd15b84db8b71d2ea9b156d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowDestination: {x: 0, y: 0, z: 0}
 --- !u!195 &197202162
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -744,7 +743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8854c6c86cd15b84db8b71d2ea9b156d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowDestination: {x: 0, y: 0, z: 0}
 --- !u!195 &749843483
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1549,7 +1547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8854c6c86cd15b84db8b71d2ea9b156d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowDestination: {x: 0, y: 0, z: 0}
 --- !u!1 &1150352749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,7 +1990,6 @@ GameObject:
   - component: {fileID: 1595887289}
   - component: {fileID: 1595887288}
   - component: {fileID: 1595887287}
-  - component: {fileID: 1595887291}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -2060,29 +2056,13 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1595887286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children:
   - {fileID: 1695203580}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1595887291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1595887286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c63c5d98ade83f48ab3635568c26c15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 1852368413945600, guid: 7e2af007ea2c3064bbfb98f305558812, type: 2}
-  Target: {fileID: 0}
-  AttackRange: 4
-  AttackDelay: 0.5
-  ProjectileSpeed: 10
 --- !u!1 &1629407549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,32 +2144,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1629407549}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1695203579 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1903275679905882, guid: 5b04cbf517be3f747a3873a574b3cf29,
-    type: 2}
-  m_PrefabInternal: {fileID: 1775190253}
 --- !u!4 &1695203580 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4032304671158880, guid: 5b04cbf517be3f747a3873a574b3cf29,
     type: 2}
   m_PrefabInternal: {fileID: 1775190253}
---- !u!114 &1695203584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1695203579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c63c5d98ade83f48ab3635568c26c15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Projectile: {fileID: 1852368413945600, guid: 7e2af007ea2c3064bbfb98f305558812, type: 2}
-  Target: {fileID: 0}
-  AttackRange: 4
-  AttackDelay: 0.5
-  ProjectileSpeed: 10
 --- !u!1001 &1775190253
 Prefab:
   m_ObjectHideFlags: 0
