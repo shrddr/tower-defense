@@ -12,6 +12,9 @@ public class LevelController : MonoBehaviour
     public Text EndText;
     public Canvas Menu;
     public Spawner[] Spawners;
+    public AudioSource Audio;
+    public AudioClip WonClip;
+    public AudioClip LostClip;
 
     private int _livesLeft;
     private int _enemiesLeft;
@@ -33,13 +36,6 @@ public class LevelController : MonoBehaviour
         LivesText.text = "Lives: " + _livesLeft;
         EnemiesText.text = "Enemies: " + _enemiesLeft;
         GoldText.text = "Gold: " + _gold;
-        if (_lost)
-            EndText.text = "LOST";
-        else if (_won)
-        {
-            EndText.text = "WON";
-        }
-            
     }
 
     public void UpdateLives(int amount)
@@ -47,8 +43,7 @@ public class LevelController : MonoBehaviour
         _livesLeft += amount;
         UpdateText();
 
-        if (_livesLeft < 1)
-            _lost = true;
+        if (_livesLeft <= 0) Lose();     
     }
 
     public void UpdateGold(int amount)
@@ -59,20 +54,34 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
+        if (_won || _lost) return;
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         _enemiesLeft = enemies.Length;
         UpdateText();
-
-        if (_lost) return;
 
         bool spawnersFinished = true;
         foreach (var spawner in Spawners)
             spawnersFinished &= spawner.Finished;
 
-        if (spawnersFinished && _enemiesLeft < 1)
-        {
-            _won = true;
-            Menu.gameObject.SetActive(true);
-        }
+        if (spawnersFinished && _enemiesLeft < 1) Win();
+    }
+
+    void Win()
+    {
+        _won = true;
+        EndText.text = "WON";
+        Audio.clip = WonClip;
+        Audio.Play();
+        Menu.gameObject.SetActive(true);
+    }
+
+    void Lose()
+    {
+        _lost = true;
+        EndText.text = "LOST";
+        Audio.clip = LostClip;
+        Audio.Play();
+        Menu.gameObject.SetActive(true);
     }
 }

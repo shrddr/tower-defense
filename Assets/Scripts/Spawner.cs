@@ -20,14 +20,11 @@ public class Spawner : MonoBehaviour
     {
         Instantiate(Enemy, transform.position, transform.rotation);
         _enemiesToSpawn--;
-    }
 
-    void Update()
-    {
         if (_enemiesToSpawn == 0)
         {
             CancelInvoke();
             Finished = true;
-        }       
+        }
     }
 }
