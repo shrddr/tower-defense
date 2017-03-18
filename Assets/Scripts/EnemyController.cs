@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
     {
         if (_dead) return;
         _hp -= amount;
-        if (_hp < 0) Die();
+        if (_hp <= 0) Die();
     }
 
     private void Die()
