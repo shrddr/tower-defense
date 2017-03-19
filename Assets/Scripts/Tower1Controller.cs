@@ -8,6 +8,7 @@ public class Tower1Controller : MonoBehaviour
     public float AttackRange = 4;
     public float AttackDelay = 5f;
     public float ProjectileSpeed = 3f;
+    public float Damage = 3;
     public AudioSource Audio;
 
     private float _attackCooldown = 0;
@@ -53,7 +54,7 @@ public class Tower1Controller : MonoBehaviour
         var projectileController = projectile.GetComponent<ProjectileController>();
         projectileController.Target = Target;
         projectileController.Speed = ProjectileSpeed;
-
+        projectileController.Damage = Damage;
         Audio.Play();
     }
 

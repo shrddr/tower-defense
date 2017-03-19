@@ -26,8 +26,7 @@ public class ProjectileController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.LogWarning("Enemy!");
-            other.gameObject.SendMessage("TakeDamage", Damage);
+            other.gameObject.GetComponent<EnemyController>().TakeDamage(Damage);
             Destroy(gameObject);
         }
     }
