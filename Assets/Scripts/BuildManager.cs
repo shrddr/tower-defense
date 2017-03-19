@@ -3,6 +3,7 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     private BuildController _activeBuilder;
+    private LevelController _levelController;
 
     public static BuildManager Instance { get; set; }
 
@@ -34,7 +35,27 @@ public class BuildManager : MonoBehaviour
 
     public void OnTower2ButtonClick()
     {
-        Instantiate(Tower2, _activeBuilder.transform.position, Quaternion.identity);
+        if (!TryToPay(Tower2))
+            return;
+
+        BuildTower(Tower2);
+    }
+
+    private bool TryToPay(GameObject towerToBuild)
+    {
+        var price = towerToBuild.GetComponent<TowerController>().GoldPrice;
+        if (_levelController.Gold >= price)
+        {
+            _levelController.UpdateGold(-price);
+            return true;
+        }
+
+        return false;
+    }
+
+    private void BuildTower(GameObject towerToBuild)
+    {
+        Instantiate(towerToBuild, _activeBuilder.transform.position, Quaternion.identity);
         Destroy(_activeBuilder.gameObject);
         _activeBuilder = null;
         gameObject.SetActive(false);
@@ -42,21 +63,17 @@ public class BuildManager : MonoBehaviour
 
     public void OnTower1ButtonClick()
     {
-        Instantiate(Tower1, _activeBuilder.transform.position, Quaternion.identity);
-        Destroy(_activeBuilder.gameObject);
-        _activeBuilder = null;
-        gameObject.SetActive(false);
+        if (!TryToPay(Tower1))
+            return;
+
+        BuildTower(Tower1);
     }
 
     // Use this for initialization
     private void Start()
     {
-        Initialize();
-    }
-
-    public void Initialize()
-    {
         gameObject.SetActive(false);
+        _levelController = LevelController.Instance;
     }
 
     // Update is called once per frame

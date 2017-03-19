@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class LevelController : MonoBehaviour
 {
+    public static LevelController Instance;
+
     public int StartingLives;
     public int StartingGold;
     public Text LivesText;
@@ -16,16 +18,25 @@ public class LevelController : MonoBehaviour
     public AudioClip WonClip;
     public AudioClip LostClip;
 
+    public int Gold { get; private set; }
+
     private int _livesLeft;
     private int _enemiesLeft;
-    private int _gold;
     private bool _won;
     private bool _lost;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+    }
 
     void Start()
 	{
         _livesLeft = StartingLives;
-	    _gold = StartingGold;
+	    Gold = StartingGold;
 	    _enemiesLeft = 0;
         UpdateText();
         Menu.gameObject.SetActive(false);
@@ -35,7 +46,7 @@ public class LevelController : MonoBehaviour
     {
         LivesText.text = "Lives: " + _livesLeft;
         EnemiesText.text = "Enemies: " + _enemiesLeft;
-        GoldText.text = "Gold: " + _gold;
+        GoldText.text = "Gold: " + Gold;
     }
 
     public void UpdateLives(int amount)
@@ -49,7 +60,7 @@ public class LevelController : MonoBehaviour
 
     public void UpdateGold(int amount)
     {
-        _gold += amount;
+        Gold += amount;
         UpdateText();
     }
 

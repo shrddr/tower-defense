@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
+    public int GoldPrice = 10;
     public float TargetSeekRange = 5;
     private GameObject _target;
 
