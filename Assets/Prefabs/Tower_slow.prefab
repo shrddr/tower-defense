@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114509689418051458}
   - component: {fileID: 82906776783365088}
   m_Layer: 0
-  m_Name: Hair
+  m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4032304671158880}
   - component: {fileID: 114422542039834694}
   m_Layer: 0
-  m_Name: Tower2
+  m_Name: Tower_slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aada9740103b27545b3a93bcec9c2095, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 223578535148256608}
   - component: {fileID: 114035421462582558}
   - component: {fileID: 114850241062041782}
+  - component: {fileID: 114654518452348580}
   m_Layer: 5
   m_Name: BuildCanvas
   m_TagString: Untagged
@@ -276,7 +277,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114648112243200626}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114654518452348580}
+        m_MethodName: OnTower2ButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114421197827556948
@@ -317,7 +329,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114818725960116890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114654518452348580}
+        m_MethodName: OnTower1ButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114605233269461324
@@ -374,6 +397,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114654518452348580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836306396316854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d39a7faf92ad1429f782f3306419c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tower1: {fileID: 1903275679905882, guid: 5b04cbf517be3f747a3873a574b3cf29, type: 2}
+  Tower2: {fileID: 1903275679905882, guid: a00cf9a13f449b04eb00faf168c320b0, type: 2}
 --- !u!114 &114818725960116890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -488,7 +524,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114962670299619538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114654518452348580}
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114962670299619538
