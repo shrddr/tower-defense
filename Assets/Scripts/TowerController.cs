@@ -28,6 +28,6 @@ public class TowerController : MonoBehaviour
                 _target = null;
 
         if (_target == null)
-            _target = TargetHelper.TryToGetTarget(gameObject, TargetSeekRange);
+            _target = TargetHelper.GetNearestTargetInRange(gameObject, TargetSeekRange);
     }
 }
