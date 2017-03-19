@@ -36,7 +36,7 @@ public partial class GunController : MonoBehaviour
                     Target = null;
 
             if (Target == null)
-                Target = TargetHelper.TryToGetTarget(gameObject, AttackRange);
+                Target = TargetHelper.GetNearestTargetInRange(gameObject, AttackRange);
 
             if (Target != null)
                 Attack();
