@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Projectile: {fileID: 1956754070465624, guid: cb62d1cec5808dc478431f5699f81599, type: 2}
   Target: {fileID: 0}
-  AttackRange: 4
+  AttackRange: 3
   AttackDelay: 0.1
   ProjectileSpeed: 6
   DamagePerProjectile: 0.5
