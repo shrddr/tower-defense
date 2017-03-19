@@ -1,10 +1,15 @@
+using Assets.Scripts;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    public GameObject Explosion;
     public GameObject Target;
     public float Speed = 10;
     public float Damage = 5;
+    public float Aoe = 0;
+
+    private bool _done;
 
     // Use this for initialization
     private void Start ()
@@ -22,12 +27,28 @@ public class ProjectileController : MonoBehaviour
 	}
 
 
-    void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
+        if (_done) return;
+
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyController>().TakeDamage(Damage);
+            _done = true;
             Destroy(gameObject);
+
+            if (Explosion == null) return;
+            Instantiate(Explosion, transform.position, transform.rotation);
+
+            if (Aoe == 0)
+            {
+                other.gameObject.GetComponent<EnemyController>().TakeDamage(Damage);
+            }
+            else
+            {
+                foreach (var enemy in TargetHelper.GetTargets(gameObject, Aoe))
+                    enemy.gameObject.GetComponent<EnemyController>().TakeDamage(Damage);
+            }
+
         }
     }
 

@@ -43,6 +43,7 @@ public class LevelController : MonoBehaviour
         _livesLeft += amount;
         UpdateText();
 
+        if (_lost) return;
         if (_livesLeft <= 0) Lose();     
     }
 
