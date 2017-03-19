@@ -56,5 +56,6 @@ public class ProjectileController : MonoBehaviour
     {
         var step = Speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, step);
+        transform.rotation = Quaternion.LookRotation(Target.transform.position - transform.position);
     }
 }

@@ -18,7 +18,7 @@ public class TowerController : MonoBehaviour
     {
         if (_target != null)
         {
-            var newRotation = Quaternion.LookRotation(transform.position - _target.transform.position);
+            var newRotation = Quaternion.LookRotation(_target.transform.position - transform.position);
             newRotation.x = 0.0f;
             newRotation.z = 0.0f;
             transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 8);

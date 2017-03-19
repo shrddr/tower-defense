@@ -71,7 +71,7 @@ public partial class GunController : MonoBehaviour
 
     private void FireProjectile(GameObject target)
     {
-        var projectile = Instantiate(Projectile, gameObject.transform.position, Quaternion.identity);
+        var projectile = Instantiate(Projectile, transform.position, transform.rotation);
         var projectileController = projectile.GetComponent<ProjectileController>();
         projectileController.Target = target;
         projectileController.Speed = ProjectileSpeed;
