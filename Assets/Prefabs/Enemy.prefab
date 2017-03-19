@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Worth: 10
-  MaxHP: 10
+  MaxHP: 25
 --- !u!114 &114696246006731244
 MonoBehaviour:
   m_ObjectHideFlags: 1
