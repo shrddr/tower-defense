@@ -36,10 +36,10 @@ public class ProjectileController : MonoBehaviour
             _done = true;
             Destroy(gameObject);
 
-            if (Explosion == null) return;
-            Instantiate(Explosion, transform.position, transform.rotation);
+            if (Explosion != null)
+                Instantiate(Explosion, transform.position, transform.rotation);
 
-            if (Aoe == 0)
+            if (Aoe < 0.001)
             {
                 other.gameObject.GetComponent<EnemyController>().TakeDamage(Damage);
             }
