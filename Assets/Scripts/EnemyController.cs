@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class EnemyController : MonoBehaviour
 
     private LevelController _levelController;
     private NavMeshAgent _navMeshAgent;
+    private Image _healthBar;
     private float _hp;
     private bool _dead;
 
@@ -20,12 +22,14 @@ public class EnemyController : MonoBehaviour
         _navMeshAgent.SetDestination(target.position);
 
         _hp = MaxHP;
+        _healthBar = transform.FindChild("EnemyCanvas").FindChild("HealthBG").FindChild("Health").GetComponent<Image>();
     }
 
     public void TakeDamage(float amount)
     {
         if (_dead) return;
         _hp -= amount;
+        _healthBar.fillAmount = _hp / MaxHP;
         if (_hp <= 0) Die();
     }
 

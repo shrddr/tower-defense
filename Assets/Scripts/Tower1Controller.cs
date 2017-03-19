@@ -8,16 +8,15 @@ public class Tower1Controller : MonoBehaviour
     public float AttackRange = 4;
     public float AttackDelay = 5f;
     public float ProjectileSpeed = 3f;
+    public AudioSource Audio;
 
     private float _attackCooldown = 0;
-
-	// Use this for initialization
+    
     private void Start ()
-    {       
-
+    {
+        
     }
 
-    // Update is called once per frame
     private void Update()
     {
         _attackCooldown -= Time.deltaTime;
@@ -34,6 +33,11 @@ public class Tower1Controller : MonoBehaviour
             if (Target != null)
                 Attack();
         }
+
+        if (Target != null)
+        {
+            transform.rotation = Quaternion.LookRotation(Target.transform.position - transform.position);
+        }
     }
 
     private bool TargetIsInRange()
@@ -49,6 +53,8 @@ public class Tower1Controller : MonoBehaviour
         var projectileController = projectile.GetComponent<ProjectileController>();
         projectileController.Target = Target;
         projectileController.Speed = ProjectileSpeed;
+
+        Audio.Play();
     }
 
     private bool AttackIsReady()
@@ -63,6 +69,6 @@ public class Tower1Controller : MonoBehaviour
         if (enemies.Any())        
             Target = enemies.OrderBy(en => Vector3.Distance(transform.position, en.transform.position))
                 .First()
-                .gameObject;            
+                .gameObject;
     }
 }
