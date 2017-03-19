@@ -22,8 +22,8 @@ public class GameController : MonoBehaviour
 
     private void InitGame()
     {
-        
-    }  
+
+    }
 
     private void OnEnable()
     {
