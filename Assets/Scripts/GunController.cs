@@ -5,6 +5,7 @@ using UnityEngine;
 public partial class GunController : MonoBehaviour
 {
     public GameObject Projectile;
+    public GameObject ProjectileEffect;
     public GameObject Target;
 
     public float AttackRange = 4;
@@ -76,6 +77,13 @@ public partial class GunController : MonoBehaviour
         projectileController.Target = target;
         projectileController.Speed = ProjectileSpeed;
         projectileController.Damage = DamagePerProjectile;
+
+        if (ProjectileEffect != null)
+        {
+            var projectileEffect = Instantiate(ProjectileEffect, transform.position, transform.rotation);
+            projectileEffect.transform.SetParent(projectile.transform);
+        }
+
     }
 
     private bool AttackIsReady()
