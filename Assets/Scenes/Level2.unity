@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9053274af86d23445b6d6e88e58336bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1922677776200148, guid: 5f52482bb3721b448a638af28fff4f8d, type: 2}
+  Enemy: {fileID: 1922677776200148, guid: 0dfe95a2510788b4c823718d036da79c, type: 2}
   EnemyCount: 15
   SpawnDelay: 1
   SpawnInterval: 0.5
