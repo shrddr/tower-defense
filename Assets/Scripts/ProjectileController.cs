@@ -9,15 +9,13 @@ public class ProjectileController : MonoBehaviour
     public float Damage = 5;
     public float Aoe = 0;
 
-    private bool _done;
+    private bool _damageDone;
 
-    // Use this for initialization
     private void Start ()
     {
-    
-	}
+
+    }
 	
-	// Update is called once per frame
 	private void Update ()
 	{
 	    if (Target == null)
@@ -26,14 +24,13 @@ public class ProjectileController : MonoBehaviour
 	        MoveToTarget();
 	}
 
-
     protected void OnTriggerEnter(Collider other)
     {
-        if (_done) return;
+        if (_damageDone) return;
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            _done = true;
+            DetachEffects();
             Destroy(gameObject);
 
             if (Explosion != null)
@@ -49,6 +46,7 @@ public class ProjectileController : MonoBehaviour
                     enemy.gameObject.GetComponent<EnemyController>().TakeDamage(Damage);
             }
 
+            _damageDone = true;
         }
     }
 
@@ -56,5 +54,18 @@ public class ProjectileController : MonoBehaviour
     {
         var step = Speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, step);
+        var direction = Target.transform.position - transform.position;
+        if (direction != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(Target.transform.position - transform.position);
+    }
+
+    private void DetachEffects()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+            if (child.CompareTag("Effect"))
+                child.parent = null;
+        }
     }
 }
