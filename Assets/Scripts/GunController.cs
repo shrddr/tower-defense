@@ -14,6 +14,8 @@ public partial class GunController : MonoBehaviour
     public int ProjectilesPerAttack = 1;
     public float ProjectileChainAttackDelay = 1f;
 
+    private StatDataContainer _stats = new StatDataContainer();
+
     private float _attackCooldown = 0;
     private readonly List<ChainAttackData> _delayedAttacks = new List<ChainAttackData>();
     private AudioSource _shootSound;

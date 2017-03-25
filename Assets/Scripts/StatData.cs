@@ -1,10 +1,32 @@
+using System.Linq;
+using Mono.Collections.Generic;
+
 namespace Assets.Scripts
 {
-    public class StatData<T>
+    public class StatDataContainer
+    {
+        public Collection<StatData> Stats { get; set; }
+
+        public StatDataContainer()
+        {
+            Stats = new Collection<StatData>();
+        }
+
+        public float? GetStatValue(StatId statId)
+        {
+            var stat = Stats.SingleOrDefault(st => st.StatId == statId);
+
+            return stat != null ? stat.Value : (float?)null;
+        }
+    }
+
+    public class StatData
     {
         public StatId StatId { get; set; }
-        public T Value { get; set; }
+
+        public float Value { get; set; }
     }
+
 
     public enum StatId
     {
