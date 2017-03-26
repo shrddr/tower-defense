@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9053274af86d23445b6d6e88e58336bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 1922677776200148, guid: 5f52482bb3721b448a638af28fff4f8d, type: 2}
+  Enemy: {fileID: 1156190171236134, guid: a55fca8882a05d64c9c88c9caea8511f, type: 2}
   EnemyCount: 5
   SpawnDelay: 1
   SpawnInterval: 1
@@ -279,11 +279,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114421197827556948, guid: 480a4df997f825545a14eb63e749b7d2,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 480a4df997f825545a14eb63e749b7d2, type: 2}
