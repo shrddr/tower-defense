@@ -2457,6 +2457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85eafabb6bfe8a440abf2478baf52b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelNumber: 2
   StartingLives: 5
   StartingGold: 100
   LivesText: {fileID: 1881923437}

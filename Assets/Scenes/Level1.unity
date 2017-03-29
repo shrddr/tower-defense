@@ -128,7 +128,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4959394833684956, guid: 7531553c2570af54aa06518ec4d2e544, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1855142872003888, guid: 7531553c2570af54aa06518ec4d2e544, type: 2}
       propertyPath: m_Name
@@ -536,7 +536,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4032304671158880, guid: 5b04cbf517be3f747a3873a574b3cf29, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b04cbf517be3f747a3873a574b3cf29, type: 2}
@@ -1427,7 +1427,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4959394833684956, guid: 7531553c2570af54aa06518ec4d2e544, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1855142872003888, guid: 7531553c2570af54aa06518ec4d2e544, type: 2}
       propertyPath: m_Name
@@ -1473,7 +1473,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4032304671158880, guid: a00cf9a13f449b04eb00faf168c320b0, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114509689418051458, guid: a00cf9a13f449b04eb00faf168c320b0,
         type: 2}
@@ -1584,7 +1584,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4959394833684956, guid: 7531553c2570af54aa06518ec4d2e544, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7531553c2570af54aa06518ec4d2e544, type: 2}
@@ -1740,7 +1740,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4032304671158880, guid: e478506bcb6a32d4eb97a59573e90d98, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e478506bcb6a32d4eb97a59573e90d98, type: 2}
@@ -1773,6 +1773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85eafabb6bfe8a440abf2478baf52b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelNumber: 1
   StartingLives: 5
   StartingGold: 100
   LivesText: {fileID: 1881923437}
@@ -1796,7 +1797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2054431895
 AudioSource:

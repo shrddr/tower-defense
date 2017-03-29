@@ -6,6 +6,7 @@ public class LevelController : MonoBehaviour
 {
     public static LevelController Instance;
 
+    public int LevelNumber;
     public int StartingLives;
     public int StartingGold;
     public Text LivesText;
@@ -85,6 +86,7 @@ public class LevelController : MonoBehaviour
         EndText.text = "WON";
         Audio.clip = WonClip;
         Audio.Play();
+        PlayerPrefs.SetInt("MaxLevelFinished", LevelNumber);
         Menu.gameObject.SetActive(true);
     }
 
